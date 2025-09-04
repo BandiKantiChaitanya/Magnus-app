@@ -3,7 +3,6 @@ import { MdEmail } from 'react-icons/md'
 import { FaLock } from 'react-icons/fa'
 import LoginContext from './Components/Context/LoginContext'
 import { useNavigate } from 'react-router-dom'
-import Footer2 from './Components/footer2'
 import { useForm } from 'react-hook-form'
 
 
@@ -69,6 +68,11 @@ function Login() {
   return (
     <div className='pt-5' style={{minHeight:'100vh',backgroundColor:'#ecf0f5'}} >
         <h3 className='text-center'>Jala Academy</h3>
+            <div className="text-center">
+                Use the below details to login
+                <p>Email : training@jalaacademy.com</p>
+                <p style={{marginTop:'-20px',marginBottom:'-20px'}} >Password : jobprogram</p>
+            </div>
        <div className="container login mx-auto w-25 mb-">
          <form method="post" onSubmit={handleSubmit(onSubmit)} >
             <div className="mb-4 text-center mt-0">
@@ -100,7 +104,6 @@ function Login() {
             </div>
         </form>
        </div>
-       {/* <Footer2  /> */}
     </div>
   )
 }
