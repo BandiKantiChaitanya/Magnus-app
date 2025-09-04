@@ -12,8 +12,8 @@ const app=express()
 dotenv.config()
 
 const allowedOrigins = [
-  'https://magnus-app-bandikantichaitanyas-projects.vercel.app/',
-  'https://magnus-app-eight.vercel.app/',
+  'https://magnus-app-bandikantichaitanyas-projects.vercel.app',
+  'https://magnus-app-eight.vercel.app',
   'http://localhost:5173',
   'http://localhost:5174'
 ];
