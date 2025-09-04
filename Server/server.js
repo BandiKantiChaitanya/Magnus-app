@@ -11,9 +11,23 @@ const requireAuth = require('./middleware/requireAuth')
 const app=express()
 dotenv.config()
 
+const allowedOrigins = [
+  'https://magnus-app-bandikantichaitanyas-projects.vercel.app/',
+  'https://magnus-app-eight.vercel.app/',
+  'http://localhost:5173',
+  'http://localhost:5174'
+];
+
 // middleware 
 app.use(cors({
-    origin:'http://localhost:5173',
+    origin:  function(origin, callback){
+    if(!origin) return callback(null, true); // allow REST clients like Postman
+    if(allowedOrigins.includes(origin)){
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'), false);
+    }
+  },
     credentials: true 
 }))
 app.use(express.json())
